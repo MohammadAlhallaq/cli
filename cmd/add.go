@@ -1,6 +1,3 @@
-/*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-*/
 package cmd
 
 import (
@@ -16,11 +13,19 @@ var addCmd = &cobra.Command{
 }
 
 func addRun(cmd *cobra.Command, args []string) {
-	items := []todo.Item{}
+	var items []todo.Item
+
 	for _, x := range args {
 		items = append(items, todo.Item{Text: x})
 	}
-	fmt.Println(items)
+
+	err := todo.SaveItems("./data.json", items)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println("Data Saved Successfully")
 }
 
 func init() {
