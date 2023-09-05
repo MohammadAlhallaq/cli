@@ -15,16 +15,17 @@ var addCmd = &cobra.Command{
 func addRun(_ *cobra.Command, args []string) {
 	var items []todo.Item
 
-	for _, x := range args {
+	for i, x := range args {
 		item := todo.Item{Text: x}
 		item.SetPriority(priority)
+		item.SetLabel(i + 1)
 		items = append(items, item)
 	}
 
 	err := todo.SaveItems(dataFile, items)
 
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println(err.Error())
 	}
 
 	fmt.Println("Data Saved Successfully")
