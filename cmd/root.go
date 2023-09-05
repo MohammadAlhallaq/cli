@@ -13,6 +13,7 @@ var rootCmd = &cobra.Command{
 	Use: "demo-cli",
 }
 var dataFile string
+var priority int
 
 func Execute() {
 	err := rootCmd.Execute()
@@ -30,4 +31,5 @@ func init() {
 	}
 
 	rootCmd.PersistentFlags().StringVar(&dataFile, "datafile", CurrentUser+string(os.PathSeparator)+"data.json", "data file to store items")
+	addCmd.Flags().IntVarP(&priority, "priority", "p", 2, "priority:1,2,3")
 }
