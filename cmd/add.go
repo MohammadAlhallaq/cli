@@ -12,7 +12,7 @@ var addCmd = &cobra.Command{
 	Run: addRun,
 }
 
-func addRun(cmd *cobra.Command, args []string) {
+func addRun(_ *cobra.Command, args []string) {
 	var items []todo.Item
 
 	for _, x := range args {

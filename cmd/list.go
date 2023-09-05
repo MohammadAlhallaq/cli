@@ -14,7 +14,7 @@ var listCmd = &cobra.Command{
 	Run: listRun,
 }
 
-func listRun(cmd *cobra.Command, args []string) {
+func listRun(_ *cobra.Command, _ []string) {
 
 	d, err := todo.ReadItems(dataFile)
 
