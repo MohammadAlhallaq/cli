@@ -1,1 +1,1 @@
-[{"Text":"first","Priority":2,"Position":1},{"Text":"second","Priority":2,"Position":2},{"Text":"third","Priority":2,"Position":3}]
+[{"Text":"first","Priority":2,"Position":1,"Done":true},{"Text":"second","Priority":2,"Position":2,"Done":true},{"Text":"third","Priority":2,"Position":3,"Done":false}]
