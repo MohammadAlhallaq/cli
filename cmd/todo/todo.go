@@ -14,6 +14,7 @@ type Item struct {
 
 func SaveItems(filename string, items []Item) error {
 	b, err := json.Marshal(items)
+
 	err = os.WriteFile(filename, b, 0644)
 
 	if err != nil {
