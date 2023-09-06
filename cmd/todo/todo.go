@@ -24,6 +24,7 @@ func SaveItems(filename string, items []Item) error {
 
 func ReadItems(filename string) ([]Item, error) {
 	d, err := os.ReadFile(filename)
+
 	if err != nil {
 		return []Item{}, err
 	}
